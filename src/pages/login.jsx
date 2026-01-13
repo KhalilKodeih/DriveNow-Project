@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../api/authApi";
+import { useAuth } from "../context/AuthContext";
+import { Mail, Lock } from "lucide-react";
 import "./login.css";
 
 export default function Login() {
@@ -7,6 +10,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,51 +19,74 @@ export default function Login() {
     setLoading(true);
 
     try {
-      // Call API
       const data = await loginUser(email, password);
       console.log("Login success:", data);
 
-      // ✅ Save email in localStorage
-      localStorage.setItem("email", email);
+      // Save user data in auth context
+      login({
+        id: data.user?.id || data.id,
+        name: data.user?.name || data.name,
+        email: email,
+      });
 
-      // Optional: if your API returns a token
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-      }
-
-      alert("Login successful! Email saved in localStorage.");
+      navigate("/cars");
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
+      setError(err.message || "Login failed. Please check your credentials.");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Login</h2>
+    <div className="auth-page">
+      <div className="auth-container">
+        <div className="auth-header">
+          <h1>Welcome Back</h1>
+          <p>Login to access your account and rent cars</p>
+        </div>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <div className="auth-error">{error}</div>}
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div className="form-group">
+            <label htmlFor="email">
+              <Mail size={18} />
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
+          <div className="form-group">
+            <label htmlFor="password">
+              <Lock size={18} />
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-      <button type="submit" disabled={loading}>
-        {loading ? "Logging in..." : "Login"}
-      </button>
-    </form>
+          <button type="submit" className="auth-btn" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        <p className="auth-footer">
+          Don't have an account? <Link to="/register">Register here</Link>
+        </p>
+      </div>
+    </div>
   );
 }

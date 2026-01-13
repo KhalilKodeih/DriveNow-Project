@@ -14,7 +14,7 @@ export async function loginUser(email, password) {
   const data = await response.json();
 
   if (!response.ok) {
-    throw { response: { data } };
+    throw new Error(data.message || "Login failed");
   }
 
   return data;
@@ -33,7 +33,7 @@ export async function registerUser({ name, email, password }) {
   const data = await response.json();
 
   if (!response.ok) {
-    throw { response: { data } };
+    throw new Error(data.message || "Registration failed");
   }
 
   return data;
