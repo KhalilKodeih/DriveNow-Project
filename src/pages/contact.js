@@ -1,5 +1,6 @@
 // src/pages/contact.js
 import { useState } from "react";
+import "./contact.css";
 
 function Contact() {
   const [form, setForm] = useState({

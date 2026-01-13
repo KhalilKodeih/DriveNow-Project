@@ -5,12 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./style.css";
 
-import { HashRouter } from "react-router-dom";
-
-<HashRouter>
-  <App />
-</HashRouter>;
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

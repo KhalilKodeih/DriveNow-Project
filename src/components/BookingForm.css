@@ -1,0 +1,29 @@
+.booking-form {
+  margin-top: 18px;
+  border: 1px solid #e7e7e7;
+  border-radius: 14px;
+  padding: 14px;
+  background: white;
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+.booking-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.booking-form label {
+  font-size: 13px;
+  color: #555;
+}

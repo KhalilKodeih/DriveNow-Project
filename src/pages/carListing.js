@@ -1,13 +1,44 @@
 // src/pages/carListing.js
-import { useState } from "react";
-import { cars as allCars } from "../data/cars";
+import { useState, useEffect } from "react";
 import CarCard from "../components/CarCard";
+import "./carListing.css";
 
 function Cars() {
-  const [filter, setFilter] = useState("All");
+  const [cars, setCars] = useState([]); // state to hold cars from API
+  const [filter, setFilter] = useState("All"); // state to hold current filter
+  const [loading, setLoading] = useState(true); // state to show loading status
+  const [error, setError] = useState(null); // state to store fetch error
 
+  // Fetch cars from backend API when component loads
+  useEffect(() => {
+    async function fetchCars() {
+      try {
+        const response = await fetch("http://localhost:5000/api/cars");
+        const data = await response.json(); // convert response to JSON
+        setCars(data); // save cars into state
+        setLoading(false); // stop loading
+      } catch (err) {
+        setError("Failed to load cars"); // set error message
+        setLoading(false);
+      }
+    }
+
+    fetchCars(); // run the fetch function
+  }, []); // empty array = run only once
+
+  // Apply filter on cars from API
   const filteredCars =
-    filter === "All" ? allCars : allCars.filter((car) => car.type === filter);
+    filter === "All" ? cars : cars.filter((car) => car.type === filter);
+
+  // Show loading message
+  if (loading) {
+    return <p>Loading cars...</p>;
+  }
+
+  // Show error message
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <section className="page">
