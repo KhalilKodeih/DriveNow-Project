@@ -1,8 +1,8 @@
 {
-  "name": "carrental",
-  "version": "0.1.0",
+  "name": "csci426-car-rental-project",
   "private": true,
-  "homepage": "https://KhalilKodeih.github.io/carRental/",
+  "description": "DriveNow Car Rental - Full Stack Project",
+  "homepage": "https://KhalilKodeih.github.io/carRentalProject/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
