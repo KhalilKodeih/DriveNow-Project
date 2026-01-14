@@ -1,0 +1,349 @@
+/* ============================
+   CAR LANDING PAGE STYLES
+   ============================ */
+
+* {
+  box-sizing: border-box;
+}
+
+.car-landing {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1a1a2e;
+}
+
+/* Container */
+.cl-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Buttons */
+.cl-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.cl-btn-primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.cl-btn-primary:hover {
+  background: #4338ca;
+}
+
+.cl-btn-outline {
+  background: transparent;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+}
+
+.cl-btn-outline:hover {
+  background: #4f46e5;
+  color: white;
+}
+
+/* ============================
+   HERO SECTION
+   ============================ */
+.cl-hero {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 0;
+  min-height: 500px;
+}
+
+.cl-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.cl-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.cl-hero-text {
+  color: white;
+}
+
+.cl-hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.cl-hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cl-hero-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cl-hero-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #1a1a2e;
+}
+
+.cl-hero-card p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.cl-hero-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cl-hero-card li {
+  padding: 8px 0;
+  color: #22c55e;
+  font-weight: 500;
+}
+
+/* ============================
+   SECTIONS
+   ============================ */
+.cl-section {
+  padding: 80px 0;
+}
+
+.cl-section h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.cl-section-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+/* ============================
+   FEATURES
+   ============================ */
+.cl-features {
+  background: #f8fafc;
+}
+
+.cl-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.cl-feature {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.cl-feature:hover {
+  transform: translateY(-4px);
+}
+
+.cl-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.cl-feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.cl-feature p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ============================
+   HOW IT WORKS (STEPS)
+   ============================ */
+.cl-steps {
+  background: white;
+}
+
+.cl-steps-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.cl-step {
+  text-align: center;
+}
+
+.cl-step-circle {
+  width: 60px;
+  height: 60px;
+  background: #4f46e5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+
+.cl-step h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cl-step p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ============================
+   CTA SECTION
+   ============================ */
+.cl-cta {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+.cl-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.cl-cta h2 {
+  text-align: left;
+  color: white;
+}
+
+.cl-cta p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 500px;
+}
+
+/* ============================
+   FEATURED CARS SECTION
+   ============================ */
+.cl-cars {
+  background: #f8fafc;
+}
+
+.cl-cars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cl-car-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cl-car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cl-car-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.cl-car-info {
+  padding: 20px;
+}
+
+.cl-car-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+  color: #1a1a2e;
+}
+
+.cl-car-year {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.cl-car-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 16px;
+}
+
+.cl-car-info .cl-btn {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 768px) {
+  .cl-hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cl-hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .cl-features-grid,
+  .cl-steps-timeline,
+  .cl-cars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cl-cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cl-cta h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .cl-cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

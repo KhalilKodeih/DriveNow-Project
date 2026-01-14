@@ -1,0 +1,25 @@
+.car-details__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.car-details__info img {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid #e7e7e7;
+  object-fit: cover;
+}
+
+.car-details__price {
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .car-details__info {
+    grid-template-columns: 1fr;
+  }
+}

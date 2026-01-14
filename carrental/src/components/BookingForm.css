@@ -1,0 +1,125 @@
+/* ...existing code... */
+
+.booking-form {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+}
+
+.booking-form h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.booking-form__row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.booking-form__row > div {
+  flex: 1;
+}
+
+.booking-form__row label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.booking-form__row input {
+  margin-bottom: 0;
+}
+
+.booking-form__error {
+  background-color: #fee2e2;
+  color: #dc2626;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #fecaca;
+}
+
+.booking-form--locked,
+.booking-form--success {
+  text-align: center;
+}
+
+.booking-form__lock-overlay {
+  padding: 40px 20px;
+}
+
+.booking-form__lock-overlay h3 {
+  margin-top: 15px;
+}
+
+.booking-form__lock-overlay p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.booking-form__auth-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.booking-form__success-message {
+  padding: 20px;
+}
+
+.booking-form__success-message h3 {
+  margin-bottom: 15px;
+}
+
+.booking-form__success-message p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-primary:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}

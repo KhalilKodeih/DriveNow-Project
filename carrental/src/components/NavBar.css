@@ -1,0 +1,138 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  border-bottom: 1px solid #e7e7e7;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__logo a {
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  color: #111;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 14px;
+}
+
+.navbar__links a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.navbar__links a:hover {
+  background: #f3f4f6;
+}
+
+.navbar__links a.active {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+/* Auth Section */
+.navbar__auth {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar__auth-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__login-btn {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.navbar__login-btn:hover {
+  background: #f3f4f6;
+}
+
+.navbar__register-btn {
+  text-decoration: none;
+  background: #e94560;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.navbar__register-btn:hover {
+  background: #d63850;
+  transform: translateY(-1px);
+}
+
+.navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar__username {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.navbar__username svg {
+  color: #e94560;
+}
+
+.navbar__logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  color: #666;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar__logout-btn:hover {
+  background: #e94560;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .navbar__links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .navbar__auth {
+    order: 2;
+  }
+}
