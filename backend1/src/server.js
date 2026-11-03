@@ -22,7 +22,7 @@ const db = mysql.createPool({
 // Test database connection
 db.getConnection((err, connection) => {
   if (err) {
-    console.error("❌ Database connection failed:", err.message);
+    console.error("Database connection failed:", err.message);
   } else {
     console.log("✅ MySQL connected");
     connection.release();
@@ -125,7 +125,7 @@ app.post("/api/cars", (req, res) => {
     (err, result) => {
       if (err) return res.status(500).json(err);
       res.status(201).json({ id: result.insertId, brand, model });
-    }
+    },
   );
 });
 
@@ -146,7 +146,7 @@ app.put("/api/cars/:id", (req, res) => {
         return res.status(404).json({ message: "Car not found" });
       }
       res.json({ message: "Car updated successfully" });
-    }
+    },
   );
 });
 
@@ -198,7 +198,7 @@ app.post("/api/orders", (req, res) => {
       res
         .status(201)
         .json({ id: result.insertId, message: "Order created successfully" });
-    }
+    },
   );
 });
 
@@ -220,7 +220,7 @@ app.put("/api/orders/:id/status", (req, res) => {
         return res.status(404).json({ message: "Order not found" });
       }
       res.json({ message: "Order status updated" });
-    }
+    },
   );
 });
 
